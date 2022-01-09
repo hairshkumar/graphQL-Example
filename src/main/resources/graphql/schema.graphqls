@@ -1,0 +1,29 @@
+schema {
+  query: Query
+}
+
+type Query {
+  getAllEmployee: [Employee]
+  getEmployeeById(id: Int): Employee
+}
+
+type Employee {
+  id: ID
+  name: String
+  jobTitle: String
+  mobileNo: String
+  joinedDate: String
+  gender: String
+  department: Department
+  project: Project
+}
+
+type Department {
+  id: ID
+  name: String
+}
+
+type Project {
+  id: ID
+  name: String
+}
