@@ -22,12 +22,12 @@ public class EmployeeManagamentService {
 		return employeeRepo.findAll();
 	}
 
-	public void updateEmployeeDetailsById(int employeeId, Employee updatedEmployee) {
-		employeeRepo.save(updatedEmployee);
+	public Employee updateEmployee(Employee updatedEmployee) {
+		return employeeRepo.save(updatedEmployee);
 	}
 
-	public void createEmployee(Employee employee) {
-		employeeRepo.save(employee);
+	public Employee createEmployee(Employee employee) {		
+		return employeeRepo.save(employee);
 	}
 
 	public void deleteEmployeeDetailsById(String employeeId) {

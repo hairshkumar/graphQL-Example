@@ -1,10 +1,38 @@
 schema {
   query: Query
+  mutation: Mutation
+}
+
+type Mutation {
+	addEmployee(employee: EmployeeInput): Employee
+	updateEmployee(employee: EmployeeInput): Employee
 }
 
 type Query {
   getAllEmployee: [Employee]
-  getEmployeeById(id: Int): Employee
+  getEmployeeById(id: Int) : Employee
+}
+
+input EmployeeInput {
+  id: Int	
+  name: String
+  jobTitle: String
+  mobileNo: String
+  joinedDate: String
+  gender: String
+  salary: Int
+  department: DepartmentInput
+  project: ProjectInput
+}
+
+input DepartmentInput {
+  id: ID
+  name: String
+}
+
+input ProjectInput {
+  id: ID
+  name: String
 }
 
 type Employee {
@@ -14,6 +42,7 @@ type Employee {
   mobileNo: String
   joinedDate: String
   gender: String
+  salary: Int
   department: Department
   project: Project
 }

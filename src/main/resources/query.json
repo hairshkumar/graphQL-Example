@@ -1,0 +1,54 @@
+query {
+  getAllEmployee{
+    id
+    name
+    mobileNo
+    joinedDate
+    gender
+    jobTitle
+    salary
+    department{
+      id
+      name
+    }
+    project{
+      id
+      name
+    }
+  }
+}
+
+mutation($employee:EmployeeInput){
+  updateEmployee(employee:$employee){
+    id
+    name
+    department{
+      id
+      name
+    }
+    project{
+      id
+      name
+    }
+  }
+}
+
+{
+  "employee": {
+    "id": 10,
+    "name": "Bharathasasasas",
+    "jobTitle": "Developer",
+    "mobileNo": "9840353535",
+    "joinedDate": "20-05-2019",
+    "gender": "male",
+    "salary": 25000,
+    "department": {
+      "id": "2",
+      "name": "Application Developement"
+    },
+    "project": {
+      "id": "2",
+      "name": "xxx-Project"
+    }
+  }
+}
